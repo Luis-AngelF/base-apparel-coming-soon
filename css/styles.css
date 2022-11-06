@@ -1,0 +1,166 @@
+:root {
+    --DesaturatedRed: hsl(0, 36%, 70%);
+    --SoftRed: hsl(0, 93%, 68%);
+
+    --DarkGrayishRed: hsl(0, 6%, 24%);
+
+    --Gradient1: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    --Gradient2: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'Josefin Sans', sans-serif;
+    background: var(--Gradient1);
+}
+
+.email-form {
+    display: flex;
+    border-radius: 50px;
+    border: 1px solid var(--DesaturatedRed);
+    color: var(--DesaturatedRed);
+    align-items: center;
+}
+
+.email-form.error {
+    border: 1px solid red;
+}
+
+.email input {
+    all: unset;
+    width: 100%;
+    margin-left: 20px;
+}
+
+.email-error {
+    color: red;
+    padding: 5px;
+}
+
+.send-button {
+    display: flex;
+    height: 50px;
+    width: 90px;
+    border-radius: 50px;
+    background: var(--Gradient2);
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.icon-error {
+    padding: 0 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.texts h1 {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--DarkGrayishRed);
+}
+
+.texts span {
+    color: var(--DesaturatedRed);
+    font-weight: 300;
+}
+
+.texts p {
+    color: var(--DesaturatedRed);
+}
+
+@media (max-width: 768px) {
+    .logo {
+        margin: 30px;
+        height: 20px;
+    }
+
+    .logo img {
+        height: 100%;
+    }
+
+    .main-image img {
+        width: 100%;
+    }
+
+    .texts {
+        text-align: center;
+    }
+    
+    .texts h1 {
+        margin-top: 50px;
+        font-size: 2.5em;
+    }
+
+
+    .texts p {
+        margin: 20px;
+    }
+
+    .email {
+        width: 90%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    main {
+        display: grid;
+    }
+
+    .main-image {
+        grid-column-start: 2;
+        grid-row-start: 1;
+        grid-row-end: 4;
+        height: 100vh;
+    }
+
+    .main-image img {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+    }
+
+    .logo {
+        grid-column-start: 1;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        padding: 50px;
+    }
+
+    .texts {
+        display: flex;
+        flex-direction: column;
+        grid-column-start: 1;
+        grid-row-start: 2;
+        grid-row-end: 2;
+        margin-left: 50px;
+        max-width: 450px;
+    }
+
+    .texts h1 {
+        font-size: 4em;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+    }
+
+    .email-form {
+        grid-column-start: 1;
+        grid-row-start: 2;
+        grid-row-end: 2;
+        margin: 0 50px;
+        max-width: 500px;
+    }
+
+    .email-error {
+        margin: 0 50px;
+    }
+}
